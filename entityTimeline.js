@@ -124,7 +124,62 @@ function displayTimeline(rawInput, relevanceThreshold, initialSetup) {
     }
 
 
+/*
+    var navWidth = width - rightPad - leftPad,
+        navHeight = 60;
 
+    var navChart = d3.select("#timeline").append('svg')
+        .classed('navigator', true)
+        .attr('width', navWidth)
+        .attr('height', navHeight)
+        .append('g');
+//        .attr('transform', 'translate(' + leftPad + ',' + (-topPad) + ')');
+
+    var navXScale = d3.scaleTime()
+        .domain([domainMin, domainMax])
+        .range([leftPad, navWidth]);
+
+    
+        var navYScale = d3.scale.linear()
+            .domain([yMin, yMax])
+            .range([navHeight, height - bottomPad]);
+
+
+    var navXAxis = d3.axisBottom()
+        .scale(navXScale);
+
+    navChart.append('g')
+        .attr('class', 'x axis')
+        .attr('transform', 'translate(0,' + navHeight + ')')
+        .call(navXAxis);
+
+
+    var navData = d3.area()
+        .x(function(d) {
+            return navXScale(d.time);
+        })
+        .y0(navHeight)
+        .y1(function(d) {
+            return (navHeight - (1.5 * radius));
+          });
+
+    var navLine = d3.line()
+        .x(function(d) {
+            return navXScale(d.time);
+        })
+        .y(function(d) {
+          return (navHeight - (1.5 * radius))
+        });
+
+    navChart.append('path')
+        .attr('class', 'data')
+        .attr('d', navData(entities));
+
+    navChart.append('path')
+        .attr('class', 'line')
+        .attr('d', navLine(entities));
+
+*/
 
 
     drawSlider(svg);
