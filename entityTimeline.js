@@ -338,6 +338,45 @@ function drawCircles(svg, entities, xScale, tooltip, color) {
                 .style("left", xPos + "px")
                 .style("top", height - bottomPad - largeRadius - 60 + "px");
 
+            /*
+                        var keyword = d.text;
+
+                        $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?", {
+                                tags: keyword,
+                                tagmode: "any",
+                                format: "json"
+                            },
+                            function(data) {
+                                var rnd = Math.floor(Math.random() * data.items.length);
+
+                                var image_src = data.items[rnd]['media']['m'].replace("_m", "_b");
+
+                                console.log(image_src);
+
+
+                                //Display tooltip with relevant information
+                                tooltip.transition()
+                                    .duration(200)
+                                    .style("opacity", .9);
+                                tooltip.html("<b>Type: " + d.type + "<br/>" +
+                                        "Text: " + d.text + "<br/>" +
+                                        "Count: " + d.count + "<br/>" +
+                                        "Time: " + d.time.shortFormat() + "<br/>" +
+                                        "Relevance: " + d.relevance + "</b>" +
+                                        "<div><img src=" + image_src + " height='42' width='42'></div>" + "</b>")
+                                    .style("left", xPos + "px")
+                                    .style("top", height - bottomPad - largeRadius - 60 + "px");
+
+
+                                //      $("#image").attr("src", image_src);
+
+
+                            });
+
+            */
+
+
+
         })
         .on("mouseout", function(d) {
 
@@ -516,7 +555,7 @@ function drawSlider(svg) {
                 slider.interrupt();
             })
             .on("start drag", function() {
-                console.log("slided to: " + sliderScale.invert(d3.event.x));
+              //  console.log("slider moved to: " + sliderScale.invert(d3.event.x));
 
 
                 sliderPosition = d3.event.x;
